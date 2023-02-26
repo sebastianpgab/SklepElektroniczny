@@ -50,7 +50,7 @@ namespace Sklep
                 _context.SaveChanges();
             }
 
-            if (!_context.ProduktKatergorie.Any())
+            if (!_context.ProduktKatergoria.Any())
             {
                 var produktKategorie = new List<ProduktKategoria>
                 {
@@ -59,11 +59,11 @@ namespace Sklep
                     new ProduktKategoria { IdProduktu = 3, IdKategoria = 3 }
                 };
 
-                _context.ProduktKatergorie.AddRange(produktKategorie);
+                _context.ProduktKatergoria.AddRange(produktKategorie);
                 _context.SaveChanges();
             }
 
-            if (!_context.Zmowienia.Any())
+            if (!_context.Zamowienia.Any())
             {
                 var zamowienia = new List<Zamowienie>
                 {
@@ -71,17 +71,17 @@ namespace Sklep
                     new Zamowienie { NumerZamowienia = "ZAM-2022-002", DataZamowienia = DateTime.Parse("2022-02-01") }
                 };
 
-                _context.Zmowienia.AddRange(zamowienia);
+                _context.Zamowienia.AddRange(zamowienia);
                 _context.SaveChanges();
             }
-            if (!_context.ZamowienieProdukty.Any())
+            if (!_context.ZamowienieProdukt.Any())
             {
                 var zamowienieProdukty = new List<ZamowienieProdukt>
                 {
                     new ZamowienieProdukt { IdZamowienie = 1, IdProdukt = 1, Ilosc = 2, Cena = 299.00m},
                     new ZamowienieProdukt { IdZamowienie = 2, IdProdukt = 2, Ilosc = 1, Cena = 3199.00m }
                 };
-                _context.ZamowienieProdukty.AddRange(zamowienieProdukty);
+                _context.ZamowienieProdukt.AddRange(zamowienieProdukty);
                 _context.SaveChanges();
             }
         }

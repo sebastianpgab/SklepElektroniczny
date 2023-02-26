@@ -32,23 +32,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.buttonZapisz = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxNrFaktury = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxData = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxNowyNumerFaktury = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.labelDataEdycja = new System.Windows.Forms.Label();
+            this.textBoxNowaDataEdycja = new System.Windows.Forms.TextBox();
+            this.labelFakturaEdycja = new System.Windows.Forms.Label();
+            this.textBoxNowaFakturaEdycja = new System.Windows.Forms.TextBox();
+            this.labelSzukajFaktury = new System.Windows.Forms.Label();
+            this.buttonDodajNoweZamowienie = new System.Windows.Forms.Button();
+            this.textBoxSzukajFaktury = new System.Windows.Forms.TextBox();
+            this.buttonSzukaj = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonUsun = new System.Windows.Forms.Button();
+            this.textBoxUsun = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,66 +88,14 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Numer zamówienia:";
             // 
-            // label4
+            // buttonZapisz
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(631, 187);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Edytuj Zamowienie";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(634, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(631, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(324, 17);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Podaj pozycje zamówienia, którą chcesz utworzyć:";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(956, 772);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 52);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Zapisz";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(22, 78);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(135, 628);
-            this.listBox1.TabIndex = 15;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(234, 78);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(131, 628);
-            this.listBox2.TabIndex = 16;
-            // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 16;
-            this.listBox3.Location = new System.Drawing.Point(460, 78);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(135, 628);
-            this.listBox3.TabIndex = 17;
+            this.buttonZapisz.Location = new System.Drawing.Point(956, 772);
+            this.buttonZapisz.Name = "buttonZapisz";
+            this.buttonZapisz.Size = new System.Drawing.Size(152, 52);
+            this.buttonZapisz.TabIndex = 14;
+            this.buttonZapisz.Text = "Zapisz";
+            this.buttonZapisz.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -162,102 +106,115 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "Data zamówienia";
             // 
-            // label7
+            // labelDataEdycja
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(631, 226);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(281, 17);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Numer zamowienia, który chcesz edytować:";
+            this.labelDataEdycja.AutoSize = true;
+            this.labelDataEdycja.Location = new System.Drawing.Point(631, 255);
+            this.labelDataEdycja.Name = "labelDataEdycja";
+            this.labelDataEdycja.Size = new System.Drawing.Size(316, 17);
+            this.labelDataEdycja.TabIndex = 21;
+            this.labelDataEdycja.Text = "Wpisz datę zamówienia na jaką chcesz edytować";
             // 
-            // textBoxNrFaktury
+            // textBoxNowaDataEdycja
             // 
-            this.textBoxNrFaktury.Location = new System.Drawing.Point(634, 267);
-            this.textBoxNrFaktury.Name = "textBoxNrFaktury";
-            this.textBoxNrFaktury.Size = new System.Drawing.Size(100, 22);
-            this.textBoxNrFaktury.TabIndex = 20;
+            this.textBoxNowaDataEdycja.Location = new System.Drawing.Point(634, 275);
+            this.textBoxNowaDataEdycja.Name = "textBoxNowaDataEdycja";
+            this.textBoxNowaDataEdycja.Size = new System.Drawing.Size(100, 22);
+            this.textBoxNowaDataEdycja.TabIndex = 22;
             // 
-            // label8
+            // labelFakturaEdycja
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(634, 309);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(316, 17);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Wpisz datę zamówienia na jaką chcesz edytować";
+            this.labelFakturaEdycja.AutoSize = true;
+            this.labelFakturaEdycja.Location = new System.Drawing.Point(631, 184);
+            this.labelFakturaEdycja.Name = "labelFakturaEdycja";
+            this.labelFakturaEdycja.Size = new System.Drawing.Size(156, 17);
+            this.labelFakturaEdycja.TabIndex = 23;
+            this.labelFakturaEdycja.Text = "Wpisz nowy Nr Faktury:";
             // 
-            // textBoxData
+            // textBoxNowaFakturaEdycja
             // 
-            this.textBoxData.Location = new System.Drawing.Point(634, 354);
-            this.textBoxData.Name = "textBoxData";
-            this.textBoxData.Size = new System.Drawing.Size(100, 22);
-            this.textBoxData.TabIndex = 22;
+            this.textBoxNowaFakturaEdycja.Location = new System.Drawing.Point(634, 204);
+            this.textBoxNowaFakturaEdycja.Name = "textBoxNowaFakturaEdycja";
+            this.textBoxNowaFakturaEdycja.Size = new System.Drawing.Size(100, 22);
+            this.textBoxNowaFakturaEdycja.TabIndex = 24;
             // 
-            // label9
+            // labelSzukajFaktury
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(634, 399);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(156, 17);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Wpisz nowy Nr Faktury:";
+            this.labelSzukajFaktury.AutoSize = true;
+            this.labelSzukajFaktury.Location = new System.Drawing.Point(631, 335);
+            this.labelSzukajFaktury.Name = "labelSzukajFaktury";
+            this.labelSzukajFaktury.Size = new System.Drawing.Size(208, 17);
+            this.labelSzukajFaktury.TabIndex = 26;
+            this.labelSzukajFaktury.Text = "Wyszukiwanie, wpisz Nr Faktury";
             // 
-            // textBoxNowyNumerFaktury
+            // buttonDodajNoweZamowienie
             // 
-            this.textBoxNowyNumerFaktury.Location = new System.Drawing.Point(637, 439);
-            this.textBoxNowyNumerFaktury.Name = "textBoxNowyNumerFaktury";
-            this.textBoxNowyNumerFaktury.Size = new System.Drawing.Size(100, 22);
-            this.textBoxNowyNumerFaktury.TabIndex = 24;
+            this.buttonDodajNoweZamowienie.Location = new System.Drawing.Point(728, 62);
+            this.buttonDodajNoweZamowienie.Name = "buttonDodajNoweZamowienie";
+            this.buttonDodajNoweZamowienie.Size = new System.Drawing.Size(167, 41);
+            this.buttonDodajNoweZamowienie.TabIndex = 27;
+            this.buttonDodajNoweZamowienie.Text = "Dodaj nowe zamowienie";
+            this.buttonDodajNoweZamowienie.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // textBoxSzukajFaktury
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(763, 183);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(227, 21);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.Text = "Zaznacz jeśli chcesz edytować.";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.textBoxSzukajFaktury.Location = new System.Drawing.Point(739, 355);
+            this.textBoxSzukajFaktury.Name = "textBoxSzukajFaktury";
+            this.textBoxSzukajFaktury.Size = new System.Drawing.Size(100, 22);
+            this.textBoxSzukajFaktury.TabIndex = 28;
             // 
-            // label10
+            // buttonSzukaj
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(631, 504);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(208, 17);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Wyszukiwanie, wpisz Nr Faktury";
+            this.buttonSzukaj.Location = new System.Drawing.Point(634, 355);
+            this.buttonSzukaj.Name = "buttonSzukaj";
+            this.buttonSzukaj.Size = new System.Drawing.Size(75, 23);
+            this.buttonSzukaj.TabIndex = 29;
+            this.buttonSzukaj.Text = "Szukaj";
+            this.buttonSzukaj.UseVisualStyleBackColor = true;
             // 
-            // textBoxSearch
+            // label4
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(637, 555);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(100, 22);
-            this.textBoxSearch.TabIndex = 27;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(634, 385);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(230, 17);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Usuń zamówienie, wpisz Nr Faktury";
+            // 
+            // buttonUsun
+            // 
+            this.buttonUsun.Location = new System.Drawing.Point(636, 406);
+            this.buttonUsun.Name = "buttonUsun";
+            this.buttonUsun.Size = new System.Drawing.Size(75, 23);
+            this.buttonUsun.TabIndex = 31;
+            this.buttonUsun.Text = "Usuń";
+            this.buttonUsun.UseVisualStyleBackColor = true;
+            // 
+            // textBoxUsun
+            // 
+            this.textBoxUsun.Location = new System.Drawing.Point(739, 406);
+            this.textBoxUsun.Name = "textBoxUsun";
+            this.textBoxUsun.Size = new System.Drawing.Size(100, 22);
+            this.textBoxUsun.TabIndex = 32;
             // 
             // ZamowieniaEdycja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 852);
-            this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBoxNowyNumerFaktury);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBoxData);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxNrFaktury);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxUsun);
+            this.Controls.Add(this.buttonUsun);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.buttonSzukaj);
+            this.Controls.Add(this.textBoxSzukajFaktury);
+            this.Controls.Add(this.buttonDodajNoweZamowienie);
+            this.Controls.Add(this.labelSzukajFaktury);
+            this.Controls.Add(this.textBoxNowaFakturaEdycja);
+            this.Controls.Add(this.labelFakturaEdycja);
+            this.Controls.Add(this.textBoxNowaDataEdycja);
+            this.Controls.Add(this.labelDataEdycja);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.buttonZapisz);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -276,22 +233,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Button buttonZapisz;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxNrFaktury;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxData;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxNowyNumerFaktury;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Label labelDataEdycja;
+        private System.Windows.Forms.TextBox textBoxNowaDataEdycja;
+        private System.Windows.Forms.Label labelFakturaEdycja;
+        private System.Windows.Forms.TextBox textBoxNowaFakturaEdycja;
+        private System.Windows.Forms.Label labelSzukajFaktury;
+        private System.Windows.Forms.Button buttonDodajNoweZamowienie;
+        private System.Windows.Forms.TextBox textBoxSzukajFaktury;
+        private System.Windows.Forms.Button buttonSzukaj;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonUsun;
+        private System.Windows.Forms.TextBox textBoxUsun;
     }
 }

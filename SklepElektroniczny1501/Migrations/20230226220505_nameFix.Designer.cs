@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SklepElektroniczny1501.Entities;
 
 namespace SklepElektroniczny1501.Migrations
 {
     [DbContext(typeof(SklepDbContext))]
-    partial class SklepDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230226220505_nameFix")]
+    partial class nameFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

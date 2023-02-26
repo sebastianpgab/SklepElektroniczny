@@ -183,6 +183,10 @@
     <Compile Include="Migrations\20230220165438_update-properties.designer.cs">
       <DependentUpon>20230220165438_update-properties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20230226220505_nameFix.cs" />
+    <Compile Include="Migrations\20230226220505_nameFix.designer.cs">
+      <DependentUpon>20230226220505_nameFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\SklepDbContextModelSnapshot.cs" />
     <Compile Include="Sklep.cs">
       <SubType>Form</SubType>

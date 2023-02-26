@@ -11,9 +11,9 @@ namespace SklepElektroniczny1501.Entities
     {
         private string _connectionString = "Server=SEBASTIANPGAB\\SQLEXPRESS; Database=SklepDb; Trusted_Connection=True";
         public DbSet<Produkt> Produkty { get; set; }
-        public DbSet<ZamowienieProdukt> ZamowienieProdukty { get; set; }
-        public DbSet<Zamowienie> Zmowienia { get; set; }
-        public DbSet<ProduktKategoria> ProduktKatergorie { get; set; }
+        public DbSet<ZamowienieProdukt> ZamowienieProdukt { get; set; }
+        public DbSet<Zamowienie> Zamowienia { get; set; }
+        public DbSet<ProduktKategoria> ProduktKatergoria { get; set; }
         public DbSet<Kategoria> Kategorie { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

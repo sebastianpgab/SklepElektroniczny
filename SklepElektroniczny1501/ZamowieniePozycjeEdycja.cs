@@ -24,6 +24,7 @@ namespace SklepElektroniczny1501
             dataGridView1.CellContentClick += new DataGridViewCellEventHandler(edytujButton_Click);
             buttonZapisz.Click += new EventHandler(buttonZapisz_Click);
             buttonUsun.Click += new EventHandler(buttonUsun_Click);
+            buttonSzukaj.Click += new EventHandler(textBoxSzukaj_Click);
 
 
             DataGridViewTextBoxColumn produktColumn = new DataGridViewTextBoxColumn();
@@ -49,7 +50,7 @@ namespace SklepElektroniczny1501
             edytujColumn.UseColumnTextForButtonValue = true;
             dataGridView1.Columns.Add(edytujColumn);
 
-            var zamowienieProduktow = from zp in dbContext.ZamowienieProdukty
+            var zamowienieProduktow = from zp in dbContext.ZamowienieProdukt
                                         join p in dbContext.Produkty on zp.IdProdukt equals p.Id
                                         select new
                                         {
@@ -112,17 +113,12 @@ namespace SklepElektroniczny1501
                 decimal cena = 0;
 
                 var produkt = dbContext.Produkty.FirstOrDefault(p => p.Nazwa == nazwa);
-                var zamowienieProdukt = dbContext.ZamowienieProdukty.FirstOrDefault(p => p.IdProdukt == produkt.Id);
-                if (zamowienieProdukt != null)
+                if(produkt == null)
                 {
                     MessageBox.Show("Chcesz utworzyć zamowienia z produktem, który nie istnieje!");
                     return;
                 }
-                if (produkt == null)
-                {
-                    MessageBox.Show("Chcesz utworzyć zamowienia z produktem, który nie istnieje!");
-                    return;
-                }
+
                 if (!int.TryParse(textBoxNowaIlosc.Text, out ilosc))
                 {
                     MessageBox.Show("Wpisz poprawną ilość.");
@@ -162,7 +158,7 @@ namespace SklepElektroniczny1501
                 string nazwaProduktu = dataGridView1.Rows[index].Cells["nazwaProduktu"].Value.ToString();
 
                 var produkt = dbContext.Produkty.FirstOrDefault(p => p.Nazwa == textBoxNowaNazwa.Text);
-                var zamowienieProdukt = dbContext.ZamowienieProdukty.FirstOrDefault(p => p.IdProdukt == produkt.Id);
+                var zamowienieProdukt = dbContext.ZamowienieProdukt.FirstOrDefault(p => p.IdProdukt == produkt.Id);
 
                 if (produkt == null)
                 {
@@ -170,22 +166,22 @@ namespace SklepElektroniczny1501
                     return;
                 }
 
-                int ilosc = 0;
-                decimal cena = 0;
+                int ilosc = string.IsNullOrEmpty(textBoxNowaIlosc.Text) ? zamowienieProdukt.Ilosc : int.Parse(textBoxNowaIlosc.Text);
+                decimal cena = string.IsNullOrEmpty(textBoxNowaCena.Text) ? zamowienieProdukt.Cena : decimal.Parse(textBoxNowaCena.Text);
 
-                if (!int.TryParse(textBoxNowaIlosc.Text, out ilosc))
-                {
-                    MessageBox.Show("Wpisz poprawną ilość.");
-                    return;
-                }
+                //if (!int.TryParse(textBoxNowaIlosc.Text, out ilosc))
+                //{
+                //    MessageBox.Show("Wpisz poprawną ilość.");
+                //    return;
+                //}
 
-                if (!decimal.TryParse(textBoxNowaCena.Text, out cena))
-                {
-                    MessageBox.Show("Wpisz poprawną cenę.");
-                    return;
-                }
+                //if (!decimal.TryParse(textBoxNowaCena.Text, out cena))
+                //{
+                //    MessageBox.Show("Wpisz poprawną cenę.");
+                //    return;
+                //}
 
-                produkt.Id = zamowienieProdukt.Id;
+                // produkt.Id = zamowienieProdukt.Id;
                 zamowienieProdukt.Cena = cena;
                 zamowienieProdukt.Ilosc = ilosc;
                 buttonPokazDodaj.Enabled = true;
@@ -202,10 +198,51 @@ namespace SklepElektroniczny1501
                 MessageBox.Show("Nie ma takiego produktu.");
                 return;
             }
-            var zamowienieProduktu = dbContext.ZamowienieProdukty.FirstOrDefault(p => p.IdProdukt == product.Id);
+            var zamowienieProduktu = dbContext.ZamowienieProdukt.FirstOrDefault(p => p.IdProdukt == product.Id);
             dbContext.Remove(zamowienieProduktu);
             dbContext.SaveChanges();
             MessageBox.Show("Produkt został poprawnie usunięty.");
+        }
+        private void textBoxSzukaj_Click(object sender, EventArgs e)
+        {
+            string searchValue = textBoxSzukaj.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchValue))
+            {
+                MessageBox.Show("Nie ma takiego produktu.");
+            }
+            else
+            {
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                try
+                {
+                    List<DataGridViewRow> matchingRows = new List<DataGridViewRow>();
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        var cellValue = row.Cells["nazwaProduktu"].Value;
+                        if (cellValue != null && cellValue.ToString().Contains(searchValue))
+                        {
+                            matchingRows.Add(row);
+                        }
+                    }
+
+                    dataGridView1.Rows.Clear();
+
+                    foreach (DataGridViewRow row in matchingRows)
+                    {
+                        dataGridView1.Rows.Insert(0, row);
+                    }
+
+                    if (dataGridView1.Rows.Count > 0)
+                    {
+                        dataGridView1.Rows[0].Selected = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
     }

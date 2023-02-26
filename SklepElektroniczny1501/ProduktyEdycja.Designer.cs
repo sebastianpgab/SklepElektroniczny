@@ -42,7 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBoxId = new System.Windows.Forms.TextBox();
+            this.textBoxNazwaEdycja = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -175,21 +175,21 @@
             this.checkBox1.Text = "Czy chcesz edytować produkt?";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // textBoxId
+            // textBoxNazwaEdycja
             // 
-            this.textBoxId.Location = new System.Drawing.Point(569, 95);
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(41, 22);
-            this.textBoxId.TabIndex = 9;
+            this.textBoxNazwaEdycja.Location = new System.Drawing.Point(569, 95);
+            this.textBoxNazwaEdycja.Name = "textBoxNazwaEdycja";
+            this.textBoxNazwaEdycja.Size = new System.Drawing.Size(41, 22);
+            this.textBoxNazwaEdycja.TabIndex = 9;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(633, 98);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(274, 17);
+            this.label8.Size = new System.Drawing.Size(303, 17);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Podaj Id produktu, które chcesz edytować.";
+            this.label8.Text = "Podaj nazwe produktu, które chcesz edytować.";
             // 
             // ProduktyEdycja
             // 
@@ -197,7 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxId);
+            this.Controls.Add(this.textBoxNazwaEdycja);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -235,7 +235,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBoxId;
+        private System.Windows.Forms.TextBox textBoxNazwaEdycja;
         private System.Windows.Forms.Label label8;
     }
 }

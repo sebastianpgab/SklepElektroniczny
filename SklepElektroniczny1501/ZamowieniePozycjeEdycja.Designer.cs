@@ -39,8 +39,8 @@
             this.textBoxNowaNazwa = new System.Windows.Forms.TextBox();
             this.textBoxNowaIlosc = new System.Windows.Forms.TextBox();
             this.textBoxNowaCena = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSzukaj = new System.Windows.Forms.Button();
+            this.textBoxSzukaj = new System.Windows.Forms.TextBox();
             this.buttonPokazDodaj = new System.Windows.Forms.Button();
             this.textBoxUsun = new System.Windows.Forms.TextBox();
             this.buttonUsun = new System.Windows.Forms.Button();
@@ -149,19 +149,19 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(743, 180);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Szukaj";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonSzukaj.Location = new System.Drawing.Point(743, 180);
+            this.buttonSzukaj.Name = "buttonSzukaj";
+            this.buttonSzukaj.Size = new System.Drawing.Size(82, 23);
+            this.buttonSzukaj.TabIndex = 16;
+            this.buttonSzukaj.Text = "Szukaj";
+            this.buttonSzukaj.UseVisualStyleBackColor = true;
             // 
-            // textBoxSearch
+            // textBoxSzukaj
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(889, 180);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(100, 22);
-            this.textBoxSearch.TabIndex = 17;
+            this.textBoxSzukaj.Location = new System.Drawing.Point(889, 180);
+            this.textBoxSzukaj.Name = "textBoxSzukaj";
+            this.textBoxSzukaj.Size = new System.Drawing.Size(100, 22);
+            this.textBoxSzukaj.TabIndex = 17;
             // 
             // buttonPokazDodaj
             // 
@@ -196,8 +196,8 @@
             this.Controls.Add(this.buttonUsun);
             this.Controls.Add(this.textBoxUsun);
             this.Controls.Add(this.buttonPokazDodaj);
-            this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBoxSzukaj);
+            this.Controls.Add(this.buttonSzukaj);
             this.Controls.Add(this.textBoxNowaCena);
             this.Controls.Add(this.textBoxNowaIlosc);
             this.Controls.Add(this.textBoxNowaNazwa);
@@ -230,8 +230,8 @@
         private System.Windows.Forms.TextBox textBoxNowaIlosc;
         private System.Windows.Forms.TextBox textBoxNowaCena;
         private System.Windows.Forms.Label labelIlosc;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonSzukaj;
+        private System.Windows.Forms.TextBox textBoxSzukaj;
         private System.Windows.Forms.Button buttonPokazDodaj;
         private System.Windows.Forms.TextBox textBoxUsun;
         private System.Windows.Forms.Button buttonUsun;
