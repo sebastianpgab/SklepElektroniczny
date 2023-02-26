@@ -83,7 +83,7 @@
             this.textBoxSearch.Size = new System.Drawing.Size(100, 22);
             this.textBoxSearch.TabIndex = 4;
             // 
-            // button2
+            // button2 
             // 
             this.button2.Location = new System.Drawing.Point(1121, 274);
             this.button2.Name = "button2";
